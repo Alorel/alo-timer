@@ -1,0 +1,28 @@
+{
+  "name": "alorel/alo-timer",
+  "description": "A simple countdown class when you need accuracy",
+  "prefer-stable": true,
+  "type": "project",
+  "license": "GPL-3.0+",
+  "homepage": "https://github.com/Alorel/alo-timer",
+  "keywords": [
+    "JavaScript",
+    "timer",
+    "countdown",
+    "accurate",
+    "standalone",
+    "accuracy",
+    "accuracy"
+  ],
+  "authors": [
+    {
+      "name": "Art",
+      "email": "a.molcanovas@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "wiki": "https://github.com/Alorel/alo-timer/wiki",
+    "issues": "https://github.com/Alorel/alo-timer/issues"
+  },
+}
