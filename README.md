@@ -11,6 +11,7 @@ Imagine you want a simple countdown for your site. You add a `span`, set an inte
  - Get the amount of any of the above left individually
  - Output time left as a DD:HH:mm:ss string
  - A simple check whether the timeout has finished
+ - Pause and unpause the timer
 
 # Installation #
 One or the other:
