@@ -33,7 +33,7 @@ var span       = document.getElementById("my-countdown"),
        if (!timer.isFinished()) {
            span.innerText = timer.toString();
        } else {
-           span.innerText = "YOUR SHNITZEL IS DONE!";
+           span.innerText = "YOUR SCHNITZEL IS DONE!";
            clearInterval(interval);
        }
    },
