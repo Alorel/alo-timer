@@ -1,36 +1,49 @@
-![Logo](https://cloud.githubusercontent.com/assets/4998038/8639510/143eb500-28d4-11e5-97e2-3d1685e5fa90.png)
+For most things a simple `setTimeout()` or `setInterval()` is enough - but Javascript timers get throttled when the page is minimised/tabbed out of and you will end up with imprecise timings in the long run. This is where AloTimer comes in - you set a timer and poll it with as much precision as you need - while individual polling calls might get throttled, the end result will always be accurate.
 
-[![License](https://poser.pugx.org/alorel/alo-timer/license?format=plastic)](LICENSE)
+[![Coverage Status](https://coveralls.io/repos/github/Alorel/alo-timer/badge.svg?branch=master)](https://coveralls.io/github/Alorel/alo-timer?branch=master)
+[![Build Status](https://travis-ci.org/Alorel/alo-timer.svg?branch=master)](https://travis-ci.org/Alorel/alo-timer)
+[![Deps](https://david-dm.org/alorel/alo-timer.svg)](https://david-dm.org/alorel/alo-timer#info=dependencies&view=list)
+[![Deps](https://david-dm.org/alorel/alo-timer/dev-status.svg)](https://david-dm.org/alorel/alo-timer#info=devDependencies&view=list)
 
-# About #
-Imagine you want a simple countdown for your site. You add a `span`, set an interval to subtract a second from it every second, and in 30 minutes you refresh the page only to see that the timer is off. AloTimer addresses that - you create the timer object and, instead, query it how much time is left, getting accurate results regardless of runtime or machine resource usage.
 
-# Functionality #
+[![NPM](https://nodei.co/npm/alo-timer?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/alo-timer)
 
+# Functionality
  - Add or subtract any amount of miliseconds/seconds/minutes/hours/days
  - Get the amount of any of the above left individually
- - Output time left as a DD:HH:mm:ss string
+ - Output time left as a DD:HH:mm:ss string (customisable)
  - A simple check whether the timeout has finished
  - Pause and unpause the timer
 
-# Installation #
+# Installation
+```html
+<script src="path-to-alotimer.min.js"></script>
+```
+Or, if you prefer Node,
+```
+npm install alo-timer --save
+```
 
-    git clone https://github.com/Alorel/alo-timer.git
+# Usage example
 
-# Documentation #
-Documentation can be found in the JSDoc directory - it's just one class.
+```javascript
+var span       = document.getElementById("my-countdown"),
+    timer      = new AloTimer(3600000, ["hours", "minutes", "seconds"]), // 1 hr
+    intervalCb = function () {
+       if (!timer.hasFinished) {
+           span.innerText = timer.toString();
+       } else {
+           span.innerText = "YOUR SCHNITZEL IS DONE!";
+           clearInterval(interval);
+       }
+   },
+   interval   = setInterval(intervalCb, 1000);
+```
 
-# Usage example#
-The example uses jQuery.
+----------
 
-    var span       = $("#my-countdown"),
-        timer      = new AloTimer(3600000), // 1 hr
-        intervalCb = function () {
-            if (!timer.isFinished()) {
-                span.html(timer.toString());
-            } else {
-                span.html('Done');
-                clearInterval(interval);
-            }
-        },
-        interval   = setInterval(intervalCb, 1000);
+More information:
+
+   - [Demo](https://alorel.github.io/alo-timer)
+   - [API documentation](https://alorel.github.io/alo-timer/jsdoc)
+   - [Test coverage](https://coveralls.io/github/Alorel/alo-timer?branch=master)
