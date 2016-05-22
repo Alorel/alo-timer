@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>AloTimer Index</title>
+	<title>AloTimer Classes</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -63,53 +63,95 @@
 		<div id="main">
 			
 
+	<h1 class="page-title">Classes</h1>
+<section>
+
+<header>
+    
+        <h2>
+        
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+<dl class="details">
+    
+
 	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
 	
 
 
 
-
-
-
-
-
-
-
-
-	
 	
 
+	
+
+	
+
+	
+</dl>
 
 
+        
+    
+    </div>
 
+    
 
-    <section class="readme-section">
-        <article><p><img src="https://cloud.githubusercontent.com/assets/4998038/8639510/143eb500-28d4-11e5-97e2-3d1685e5fa90.png" alt="Logo"></p>
-<p><a href="LICENSE"><img src="https://poser.pugx.org/alorel/alo-timer/license?format=plastic" alt="License"></a></p>
-<h1>About</h1><p>Imagine you want a simple countdown for your site. You add a <code>span</code>, set an interval to subtract a second from it every second, and in 30 minutes you refresh the page only to see that the timer is off. AloTimer addresses that - you create the timer object and, instead, query it how much time is left, getting accurate results regardless of runtime or machine resource usage.</p>
-<h1>Functionality</h1><ul>
-<li>Add or subtract any amount of miliseconds/seconds/minutes/hours/days</li>
-<li>Get the amount of any of the above left individually</li>
-<li>Output time left as a DD:HH:mm:ss string</li>
-<li>A simple check whether the timeout has finished</li>
-<li>Pause and unpause the timer</li>
-</ul>
-<h1>Installation</h1><pre class="prettyprint source"><code>git clone https://github.com/Alorel/alo-timer.git</code></pre><h1>Documentation</h1><p>Documentation can be found in the JSDoc directory - it's just one class.</p>
-<h1>Usage example</h1><pre class="prettyprint source lang-javascript"><code>var span       = document.getElementById(&quot;my-countdown&quot;),
-    timer      = new AloTimer(3600000), // 1 hr
-    intervalCb = function () {
-       if (!timer.isFinished()) {
-           span.innerText = timer.toString();
-       } else {
-           span.innerText = &quot;YOUR SCHNITZEL IS DONE!&quot;;
-           clearInterval(interval);
-       }
-   },
-   interval   = setInterval(intervalCb, 1000);</code></pre></article>
-    </section>
+    
 
+    
+        <h3 class="subsection-title">Classes</h3>
 
+        <dl>
+            <dt><a href="AloTimer.html">AloTimer</a></dt>
+            <dd></dd>
+        </dl>
+    
 
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
