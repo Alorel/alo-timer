@@ -28,11 +28,10 @@ npm install alo-timer --save
 
 ```javascript
 var span       = document.getElementById("my-countdown"),
-    MY_FORMAT  = ["hours", "minutes", "seconds"],
-    timer      = new AloTimer(3600000), // 1 hr
+    timer      = new AloTimer(3600000, ["hours", "minutes", "seconds"]), // 1 hr
     intervalCb = function () {
        if (!timer.hasFinished) {
-           span.innerText = timer.toString(MY_FORMAT);
+           span.innerText = timer.toString();
        } else {
            span.innerText = "YOUR SCHNITZEL IS DONE!";
            clearInterval(interval);

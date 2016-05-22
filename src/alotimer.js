@@ -4,10 +4,13 @@ var AloTimer = (function (TIME_CHAIN, floor, Date, Error) {
      * Creates the timer
      * @author Art <a.molcanovas@gmail.com>
      * @param {number} [timeout=0] How many milliseconds to have the timeout for
+     * @param {string[]} [timeChain=["days", "hours", "minutes", "seconds"]] Which units to include in toString().
+     * Valid values are "days", "hours", "minutes", "seconds", and "ms". With the default setting the output for 1
+     * hour 53 minutes 11 seconds and 6 milliseconds would be 00:01:53:11.
      * @class
      * @global
      */
-    var AloTimer = function (timeout) {
+    var AloTimer = function (timeout, timeChain) {
         /**
          * How long the timeout is set for
          * @type {number}
@@ -22,10 +25,22 @@ var AloTimer = (function (TIME_CHAIN, floor, Date, Error) {
         this.timeStart = new Date().getTime();
 
         /**
+         * Which units to include in toString()
+         * @type {string[]}
+         */
+        this.timeChain = timeChain || TIME_CHAIN;
+
+        /**
          * When the timer was paused. Will hold false if the timer isn't currently paused.
          * @type {Date|boolean}
          */
         this.pauseTime = false;
+    }, padLeft = function (str, char, length) {
+        while (str.length < length) {
+            str = char + str;
+        }
+
+        return str;
     };
 
     /** @global */
@@ -276,19 +291,15 @@ var AloTimer = (function (TIME_CHAIN, floor, Date, Error) {
         /**
          * Returns a string representation of the amount of time remaining
          * @author Art <a.molcanovas@gmail.com>
-         * @param {string[]} [timeChain=["days", "hours", "minutes", "seconds"]] Which units to include. Valid values
-         * are "days", "hours", "minutes", "seconds", and "ms". With the default setting the output for 1 hour 53
-         * minutes 11 seconds and 6 milliseconds would be 00:01:53:11.
          * @returns {string}
          */
-        toString: function (timeChain) {
-            timeChain = timeChain || TIME_CHAIN;
+        toString: function () {
             var arr = [], tmp, i;
 
-            for (i = 0; i < timeChain.length; i++) {
-                tmp = this[timeChain[i] + "Left"];
+            for (i = 0; i < this.timeChain.length; i++) {
+                tmp = this[this.timeChain[i] + "Left"];
 
-                arr.push(tmp < 10 ? "0" + tmp : tmp);
+                arr.push(padLeft(this[this.timeChain[i] + "Left"].toString(), "0", this.timeChain[i] === "ms" ? 3 : 2));
             }
 
             return arr.join(":");

@@ -138,18 +138,15 @@ it(".timeout=", function () {
 });
 
 describe("toString", function () {
-    var t;
-
-    beforeEach(function () {
-        t = new AloTimer(TIME);
-    });
-
     it("default", function () {
-        expect(t.toString()).toBe("18:07:03:11");
+        expect((new AloTimer(TIME)).toString()).toBe("18:07:03:11");
     });
 
     it("custom", function () {
-        expect(t.toString(["minutes", "seconds"])).toBe("03:11");
+        expect((new AloTimer(TIME, ["minutes", "seconds"])).toString()).toBe("03:11");
+
+        var t = parseInt((new AloTimer(TIME, ["ms"])).toString());
+        expect(t > 70 && t <= 79).toBe(true);
     });
 });
 
