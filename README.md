@@ -6,7 +6,7 @@ For most things a simple `setTimeout()` or `setInterval()` is enough - but Javas
 [![Deps](https://david-dm.org/alorel/alo-timer/dev-status.svg)](https://david-dm.org/alorel/alo-timer#info=devDependencies&view=list)
 
 
-[![NPM](https://nodei.co/npm/alo-timer?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/alo-timer)
+[![NPM](https://nodei.co/npm/alo-timer.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/alo-timer)
 
 # Functionality
  - Add or subtract any amount of miliseconds/seconds/minutes/hours/days
