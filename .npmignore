@@ -3,3 +3,4 @@
 /src/*.min.js
 /*.html
 /demo
+/coverage
