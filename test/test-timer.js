@@ -149,7 +149,7 @@ describe("toString", function () {
     });
 
     it("custom", function () {
-        expect(t.toString(["seconds", "ms"])).toBe("11:79");
+        expect(t.toString(["minutes", "seconds"])).toBe("03:11");
     });
 });
 

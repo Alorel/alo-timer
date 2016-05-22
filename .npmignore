@@ -2,3 +2,4 @@
 /.idea
 /src/*.min.js
 /*.html
+/demo

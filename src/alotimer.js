@@ -1,36 +1,32 @@
-var AloTimer = (function (floor, Date, Error) {
-    /**
-     * Methods to call for toString()
-     */
-    var TIME_CHAIN = ['days', 'hours', 'minutes', 'seconds'],
+var AloTimer = (function (TIME_CHAIN, floor, Date, Error) {
     // Note that this is not global if require()'d in NodeJS, only plain Javascript
+    /**
+     * Creates the timer
+     * @author Art <a.molcanovas@gmail.com>
+     * @param {number} [timeout=0] How many milliseconds to have the timeout for
+     * @class
+     * @global
+     */
+    var AloTimer = function (timeout) {
         /**
-         * Creates the timer
-         * @author Art <a.molcanovas@gmail.com>
-         * @param {number} [timeout=0] How many milliseconds to have the timeout for
-         * @class
-         * @global
+         * How long the timeout is set for
+         * @type {number}
          */
-        AloTimer = function (timeout) {
-            /**
-             * How long the timeout is set for
-             * @type {number}
-             */
-            this.timeout = timeout || 0;
+        this.timeout = timeout || 0;
 
-            /**
-             * When the timeout started
-             * @type {number}
-             * @readonly
-             */
-            this.timeStart = new Date().getTime();
+        /**
+         * When the timeout started
+         * @type {number}
+         * @readonly
+         */
+        this.timeStart = new Date().getTime();
 
-            /**
-             * When the timer was paused. Will hold false if the timer isn't currently paused.
-             * @type {Date|boolean}
-             */
-            this.pauseTime = false;
-        }
+        /**
+         * When the timer was paused. Will hold false if the timer isn't currently paused.
+         * @type {Date|boolean}
+         */
+        this.pauseTime = false;
+    };
 
     /** @global */
     AloTimer.prototype = {
@@ -300,7 +296,7 @@ var AloTimer = (function (floor, Date, Error) {
     };
 
     return AloTimer;
-})(Math.floor, Date, Error);
+})(['days', 'hours', 'minutes', 'seconds'], Math.floor, Date, Error);
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
     module.exports = AloTimer;
