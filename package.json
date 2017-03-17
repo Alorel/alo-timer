@@ -1,11 +1,10 @@
 {
   "name": "alo-timer",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "A more reliable variant of setTimeout() when you just need a long timer",
   "main": "./src/alotimer.js",
   "scripts": {
     "jsdoc": "rimraf ./jsdoc && jsdoc -d ./jsdoc -t ./node_modules/ink-docstrap/template -R README.md -c ./build/jsdoc.conf.json ./src/alotimer.js",
-    "travis": "npm test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "minify": "node ./node_modules/uglify-js/bin/uglifyjs --compress --mangle -o ./src/alotimer.min.js ./src/alotimer.js",
     "test": "rimraf ./coverage && karma start ./build/karma.conf.js --single-run",
     "dist": "npm test && npm run jsdoc && npm run minify"
@@ -19,21 +18,20 @@
     "settimeout"
   ],
   "author": "Alorel <a.molcanovas@gmail.com>",
-  "license": "GPL-3.0",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/Alorel/alo-timer/issues"
   },
   "homepage": "https://github.com/Alorel/alo-timer#readme",
   "devDependencies": {
-    "coveralls": "^2.11.9",
-    "ink-docstrap": "^1.1.4",
-    "jasmine": "^2.4.1",
-    "jsdoc": "^3.4.0",
-    "karma": "^0.13.22",
-    "karma-coverage": "^1.0.0",
-    "karma-jasmine": "^1.0.2",
-    "karma-phantomjs2-launcher": "^0.5.0",
-    "rimraf": "^2.5.2",
-    "uglify-js": "^2.6.2"
+    "ink-docstrap": "^1.1",
+    "jasmine": "^2.4",
+    "jsdoc": "^3.4",
+    "karma": "^0.13",
+    "karma-coverage": "^1.0",
+    "karma-jasmine": "^1.0",
+    "karma-phantomjs2-launcher": "^0.5",
+    "rimraf": "^2.5",
+    "uglify-js": "^2.6"
   }
 }
