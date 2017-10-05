@@ -1,16 +1,19 @@
 language: node_js
+dist: trusty
+sudo: false
 node_js:
-    - "0.10"
-    - "0.12"
-    - "6"
-    - "5"
-    - "4"
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
 
 cache:
   directories:
     - node_modules
     - ~/.npm
     - /usr/local/phantomjs
+    - ~/.nvm
 
 script:
   - npm run travis
@@ -26,9 +29,3 @@ notifications:
 
 matrix:
   fast_finish: true
-
-branches:
-  only:
-    - master
-    - develop
-    - /^greenkeeper/.*$/
