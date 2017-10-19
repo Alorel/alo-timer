@@ -10,6 +10,8 @@ For most things a simple `setTimeout()` or `setInterval()` is enough - but Javas
 
 # Functionality
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Alorel/alo-timer.svg)](https://greenkeeper.io/)
+
  - Add or subtract any amount of miliseconds/seconds/minutes/hours/days
  - Get the amount of any of the above left individually
  - Output time left as a DD:HH:mm:ss string (customisable)
